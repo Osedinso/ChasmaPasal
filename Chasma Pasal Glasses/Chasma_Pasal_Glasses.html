@@ -66,20 +66,67 @@
             }
 
             /*First Column Styles*/
-            .row1{
-                align-items: center;
-                justify-content: center;
+            section#firstRow{
+                float: left;
+                padding: 10%;
+                width: 40%;
             }
-            img{
-                max-width: 40%;
-                max-height: 30%;
+            section#firstRow img{
+                display: block;
+                width: 100%;
                 float: left;
             }
-            .text{
-                font-size: 20px;
-                padding-left: 20px;
-                padding-top: 20px;
+            section#firstRow h2{
+                color: rgb(255, 136, 57);
+                display: block;
                 float: left;
+                font-family: Urbanist Bold;
+                font-size: 1.9em;
+                /*line-height: 1em;*/
+                padding-left: 20%;
+                padding-top: 20%;
+
+            }
+            section#firstRow h4{
+                font-size: 1.1em;
+                padding-left: 20%;
+                float: left;
+            }
+
+            section#secondRow{
+                float: left;
+                padding: 10%;
+                width: 40%;
+            }
+            section#secondRow img{
+                float: left;
+                width: 100%;
+            }
+            section#secondRow h2{
+                color: rgb(255, 136, 57);
+                font-family: Urbanist Bold;
+                font-size: 1.7em;
+                line-height: 1.1em;
+            }
+            section#secondRow h4{
+                font-size: 1.1em;
+            }
+
+            section#bestseller{
+                float: left;
+                padding: 10%;
+                text-align: center;
+            }
+            
+            section#styles{
+                float: left;
+                padding: 10%;
+                text-align: center;
+            }
+            
+            section#questions{
+                float: left;
+                text-align: center;
             }
         </style>
     </head>
@@ -96,22 +143,11 @@
                 </ul>
             </nav>
         </header>
-        
-        <div class="row1">
-            <div class="image">
-                <img src="example.jpg" alt="woman with glasses">
-            </div>
-            <div class="text">
-                <h2>Don't just see the world, make a statement</h2>
-                <h4>Our glasses are the perfect blend of fashion and function. Lots of new styles available to try - easy and completely free!</h4>
-            </div>
-        </div>
-        
-        <!-- <section id="firstRow">
+        <section id="firstRow">
             <img src="example.jpg" alt="woman with glasses">
             <h2>Don't just see the world, make a statement</h2>
             <h4>Our glasses are the perfect blend of fashion and function. Lots of new styles available to try - easy and completely free!</h4>
-        </section> -->
+        </section>
         <section id="secondRow">
             <img src="glass_ex.jpg" alt="">
             <h2>From classic to contemporary, we've got you covered.</h2>
@@ -135,3 +171,4 @@
         </section>
     </body>
 </html>
+
