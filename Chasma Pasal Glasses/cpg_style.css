@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: Almarai;
+    src: url(Almarai-Regular.woff) format('woff'),
+         url(Almarai-Regular.ttf) format('ttf');
+}
+
+/*
+    Chasma Pasal Style Sheet
+    Author: Fusion
+    Date: 03/20/2023
+
+    Filename: cpg_style.css
+*/
+
+/* HTML and Body Styles */
+
+html{
+    background-color: rgb(223, 255, 255);
+    /*font-family: 'Times New Roman', Times, serif;*/
+}
+
+body{
+    color: rgb(2, 181, 178);
+    background-color: rgb(243, 255, 243);
+}
+
+/* Horizontal Navigation Styles */
+nav.horizontalNav a {
+    color: rgb(2, 181, 178);
+    font-family: 'Almarai, Regular';
+    font-size: 1.5em;
+    line-height: 1.2em;
+    text-align: center;
+}

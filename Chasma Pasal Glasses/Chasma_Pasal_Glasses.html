@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+            Chasma Pasal Glasses
+            Author: Fusion
+            Date:   03/20/2023
+
+            Filename: Chasma_Pasal_Glasses.html
+        -->
+        <meta charset="UTF-8">
+        <meta name="author" content="Fusion">
+        <meta name="keywords" content="glasses, prescription, sunglasses, glasses frames, eye exam">
+        <title>Chasma Pasal</title>
+        <!-- <link href="cpg_style.css" rel="stylesheet"> -->
+        <style>
+            @font-face {
+            font-family: Urbanist;
+            src: url(Urbanist-VFont.woff) format('woff'),
+                 url(Urbanist-VFont.ttf) format('ttf');
+            }
+            @font-face {
+                font-family: Urbanist Bold;
+                src: url(Urbanist-Bold.woff) format('woff'),
+                     url(Urbanist-Bold.ttf) format('ttf');
+            }
+            html{
+                background-color: rgb(243, 255, 243);
+                font-family: Urbanist, sans-serif;
+            }
+
+            body{
+                color: rgb(1, 62, 61);
+                background-color: rgb(223, 255, 255);
+                margin-left: auto;
+                margin-right: auto;
+                width: auto;
+            }
+
+            body > header > img{
+                display: block;
+                width: 15%;
+            }
+
+            body > header > nav.horizontalNav li{
+                width: 20%;
+            }
+
+            /* Horizontal Navigation Styles */
+            nav.horizontalNav li{
+                display: block;
+                float: left;
+            }
+            nav.horizontalNav a {
+                color: rgb(1, 162, 159);
+                display: block;
+                font-family: Urbanist, sans-serif;
+                font-size: 1.5em;
+                line-height: 1.2em;
+                text-align: center;
+            }
+            nav.horizontalNav a:hover, 
+            nav.horizontalNav a:active{
+                /*background-color: rgb(39, 133, 180);*/
+                color: rgb(13, 66, 70);
+            }
+
+            /*First Column Styles*/
+            .row1{
+                align-items: center;
+                justify-content: center;
+            }
+            img{
+                max-width: 40%;
+                max-height: 30%;
+                float: left;
+            }
+            .text{
+                font-size: 20px;
+                padding-left: 20px;
+                padding-top: 20px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="cp_logo.png" alt="Chasma Pasal">
+            <nav class="horizontalNav">
+                <ul>
+                    <li><a href="Chasma_Pasal_Glasses.html">CHASMA PASAL</a></li>
+                    <li><a href="">Eyeglasses</a></li>
+                    <li><a href="">Sunglasses</a></li>
+                    <li><a href="">Contact Lenses</a></li>
+                    <li><a href="">Prescriptions</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="row1">
+            <div class="image">
+                <img src="example.jpg" alt="woman with glasses">
+            </div>
+            <div class="text">
+                <h2>Don't just see the world, make a statement</h2>
+                <h4>Our glasses are the perfect blend of fashion and function. Lots of new styles available to try - easy and completely free!</h4>
+            </div>
+        </div>
+        
+        <!-- <section id="firstRow">
+            <img src="example.jpg" alt="woman with glasses">
+            <h2>Don't just see the world, make a statement</h2>
+            <h4>Our glasses are the perfect blend of fashion and function. Lots of new styles available to try - easy and completely free!</h4>
+        </section> -->
+        <section id="secondRow">
+            <img src="glass_ex.jpg" alt="">
+            <h2>From classic to contemporary, we've got you covered.</h2>
+            <h4>The perfect pair for every occasion. Enhance your vision and your style with our frames.</h4>
+        </section>
+        <section id="bestseller">
+            <h1>For you, only the best!</h1>
+        </section>
+        <section id="styles">
+            <h1>Focus on fashion with our trendy styles.</h1>
+            <h3>Eyeglasses</h3>
+            <h3>Sunglasses</h3>
+            <h3>Contacts</h3>
+            <h3>Frames</h3>
+        </section>
+        <section id="questions">
+            <h2>Haven't got a clue on Glasses?</h2>
+            <h4>We can help. Learn about the best frames for your face shape, 
+                get information on booking an eye exam and understanding prescriptions, 
+                and many more. Walk-in appointments available at select locations.</h4>
+        </section>
+    </body>
+</html>
