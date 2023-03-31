@@ -17,20 +17,218 @@
 /* HTML and Body Styles */
 
 html{
-    background-color: rgb(223, 255, 255);
-    /*font-family: 'Times New Roman', Times, serif;*/
+    background-color: rgb(243, 255, 243);
+    font-family: Urbanist, sans-serif;
 }
 
 body{
-    color: rgb(2, 181, 178);
-    background-color: rgb(243, 255, 243);
+    color: rgb(1, 62, 61);
+    background-color: rgb(223, 255, 255);
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
 }
 
-/* Horizontal Navigation Styles */
-nav.horizontalNav a {
-    color: rgb(2, 181, 178);
-    font-family: 'Almarai, Regular';
-    font-size: 1.5em;
+body > header > img{
+    display: block;
+    width: 15%;
+}
+
+nav ul{
+    position: relative;
+    list-style: none;
+    padding: 10px;
+    margin: 5px;
+}
+
+nav li{
+    font-size: 1.3em;
+    float: left;
+    width: 260px;
+    height: 50px;
     line-height: 1.2em;
     text-align: center;
+    border-bottom: 3px solid transparent;
+    margin: 5px;
+    padding: 5px;
+}
+
+nav ul li ul{
+    display: none;
+}
+
+nav ul li:hover ul,
+nav ul li.hover ul{
+    display: block;
+}
+
+nav ul ul li{
+    clear: left;
+    width: 215px;
+    height: 25px;
+    font-size: 0.9em;
+}
+
+nav ul ul{
+    position: absolute;
+}
+
+nav ul li a:hover{
+    color: rgb(1, 62, 61);
+    border-bottom: 3px solid rgb(255, 136, 57);
+}
+
+nav ul li a.active{
+    border-bottom: 3px solid rgb(255, 136, 57);
+}
+
+nav li a{
+    background-color: rgb(243, 255, 243);
+    display: block;
+    text-decoration: none;
+}
+
+nav a:visited{
+    color: rgb(1, 62, 61);
+}
+
+/*First Row Styles*/
+section#firstRow{
+    float: left;
+    padding: 10%;
+    width: 40%;
+}
+section img{
+    display: block;
+    width: 100%;
+    float: left;
+    padding-bottom: 25px;
+}
+section#firstRow h2{
+    color: rgb(255, 136, 57);
+    font-family: Urbanist Bold;
+    font-size: 1.9em;
+    line-height: 1em;
+    padding-left: 20px;
+}
+section#firstRow h4{
+    font-size: 1.1em;
+    padding-left: 20px;
+    float: left;
+}
+
+section#secondRow{
+    float: right;
+    padding: 10%;
+    width: 40%;
+}
+section#secondRow img{
+    display: block;
+    float: right;
+    width: 100%;
+    padding-bottom: 25px;
+}
+section#secondRow h2{
+    color: rgb(255, 136, 57);
+    font-family: Urbanist Bold;
+    font-size: 1.7em;
+    line-height: 1.1em;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+section#secondRow h4{
+    font-size: 1.1em;
+    padding-left: 20px;
+    float: right;
+}
+ul{
+    position: relative;
+    list-style: none;
+    padding: 10px;
+    margin: 5px;
+}
+li{
+    font-size: 1.3em;
+    float: left;
+    width: 260px;
+    height: 50px;
+    line-height: 1.2em;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    margin: 5px;
+    padding: 5px;
+}
+ul li ul{
+    display: none;
+}
+ul li:hover ul,
+ul li.hover ul{
+    display: block;
+}
+ul ul li{
+    clear: left;
+    width: 215px;
+    height: 25px;
+    font-size: 0.9em;
+}
+ul ul{
+    position: absolute;
+}
+ul li a:hover{
+    color: rgb(1, 62, 61);
+    border-bottom: 3px solid rgb(255, 136, 57);
+}
+ul li a.active{
+    border-bottom: 3px solid rgb(255, 136, 57);
+}
+li a{
+    background-color: rgb(243, 255, 243);
+    display: block;
+    text-decoration: none;
+}
+a:visited{
+    color: rgb(1, 62, 61);
+}
+
+section#bestseller{
+    float: left;
+    padding: 10%;
+    text-align: center;
+}
+section#bestseller img{
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+}
+section#bestseller h1{
+    color: rgb(255, 136, 57);
+    font-family: Urbanist Bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+section#styles{
+    float: left;
+    padding: 10%;
+    text-align: center;
+}
+section#styles img{
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+}
+section#styles h1{
+    color: rgb(255, 136, 57);
+    font-family: Urbanist Bold;
+    font-size: 30px;
+}
+
+section#questions{
+    float: left;
+    text-align: center;
+}
+section#questions h2{
+    color: rgb(255, 136, 57);
+    font-family: Urbanist Bold;
+    font-size: 30px;
 }
