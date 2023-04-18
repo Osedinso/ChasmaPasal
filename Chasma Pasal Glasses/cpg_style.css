@@ -1,10 +1,3 @@
-@charset "utf-8";
-
-@font-face {
-    font-family: Almarai;
-    src: url(Almarai-Regular.woff) format('woff'),
-         url(Almarai-Regular.ttf) format('ttf');
-}
 
 /*
     Chasma Pasal Style Sheet
@@ -15,142 +8,92 @@
 */
 
 /* HTML and Body Styles */
+@charset "utf-8";
+
+@font-face {
+    font-family: Almarai;
+    src: url(Almarai-Regular.woff) format('woff'),
+         url(Almarai-Regular.ttf) format('ttf');
+}
 
 html{
-    background-color: rgb(243, 255, 243);
+    background-color: rgb(243, 250, 255);
     font-family: Urbanist, sans-serif;
 }
 
 body{
     color: rgb(1, 62, 61);
-    background-color: rgb(223, 255, 255);
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
+    background-color: rgb(243, 250, 255);
+    margin: auto;
+    max-width: 100%;
 }
 
 body > header > img{
     display: block;
-    width: 15%;
+    width: 150px;
 }
 
+/* Nav Styles*/
 nav ul{
+    display: flex;
     position: relative;
     list-style: none;
+    justify-content: center;
     padding: 10px;
     margin: 5px;
 }
-
 nav li{
     font-size: 1.3em;
-    float: left;
-    width: 260px;
-    height: 50px;
     line-height: 1.2em;
-    text-align: center;
     border-bottom: 3px solid transparent;
-    margin: 5px;
-    padding: 5px;
+    margin: 5px 10px;
 }
-
 nav ul li ul{
     display: none;
 }
-
 nav ul li:hover ul,
 nav ul li.hover ul{
     display: block;
 }
-
 nav ul ul li{
     clear: left;
     width: 215px;
     height: 25px;
     font-size: 0.9em;
 }
-
 nav ul ul{
     position: absolute;
 }
 
-nav ul li a:hover{
+nav ul ul li a:hover{
     color: rgb(1, 62, 61);
     border-bottom: 3px solid rgb(255, 136, 57);
 }
-
 nav ul li a.active{
     border-bottom: 3px solid rgb(255, 136, 57);
 }
-
 nav li a{
-    background-color: rgb(243, 255, 243);
+    background-color: rgb(243, 250, 255);
     display: block;
     text-decoration: none;
 }
-
 nav a:visited{
     color: rgb(1, 62, 61);
 }
 
-/*First Row Styles*/
-section#firstRow{
-    float: left;
-    padding: 10%;
-    width: 40%;
-}
-section img{
-    display: block;
-    width: 100%;
-    float: left;
-    padding-bottom: 25px;
-}
-section#firstRow h2{
-    color: rgb(255, 136, 57);
-    font-family: Urbanist Bold;
-    font-size: 1.9em;
-    line-height: 1em;
-    padding-left: 20px;
-}
-section#firstRow h4{
-    font-size: 1.1em;
-    padding-left: 20px;
-    float: left;
-}
-
-section#secondRow{
-    float: right;
-    padding: 10%;
-    width: 40%;
-}
-section#secondRow img{
-    display: block;
-    float: right;
-    width: 100%;
-    padding-bottom: 25px;
-}
-section#secondRow h2{
-    color: rgb(255, 136, 57);
-    font-family: Urbanist Bold;
-    font-size: 1.7em;
-    line-height: 1.1em;
-    padding-left: 20px;
-    padding-top: 10px;
-}
-section#secondRow h4{
-    font-size: 1.1em;
-    padding-left: 20px;
-    float: right;
-}
+/* Styles for ul within the website */
 ul{
+    display: flex;
     position: relative;
     list-style: none;
+    justify-content: center;
     padding: 10px;
     margin: 5px;
 }
 li{
     font-size: 1.3em;
     float: left;
-    width: 260px;
+    width: 230px;
     height: 50px;
     line-height: 1.2em;
     text-align: center;
@@ -167,7 +110,7 @@ ul li.hover ul{
 }
 ul ul li{
     clear: left;
-    width: 215px;
+    width: 200px;
     height: 25px;
     font-size: 0.9em;
 }
@@ -182,7 +125,7 @@ ul li a.active{
     border-bottom: 3px solid rgb(255, 136, 57);
 }
 li a{
-    background-color: rgb(243, 255, 243);
+    background-color: rgb(243, 250, 255);
     display: block;
     text-decoration: none;
 }
@@ -190,45 +133,152 @@ a:visited{
     color: rgb(1, 62, 61);
 }
 
-section#bestseller{
-    float: left;
-    padding: 10%;
-    text-align: center;
+/* Container Styles*/
+.container{
+    display: grid;
+    position: inherit;
+    grid-template-rows: auto;
+    grid-template-columns: 500px 600px;
+    row-gap: 50px;
+    column-gap: 90px;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    width: 90%;
 }
-section#bestseller img{
-    width: 400px;
-    height: 300px;
-    padding: 30px;
+img{
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+    width: 80%;
 }
-section#bestseller h1{
+h2{
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
     color: rgb(255, 136, 57);
     font-family: Urbanist Bold;
-    font-size: 30px;
-    text-align: center;
+    font-size: 2em;
+    line-height: 1.5em;
+}
+h4{
+    grid-row: 2 / 4;
+    grid-column: 2 / 3;
+    font-size: 1.5em;
+    line-height: 1.5em;
 }
 
-section#styles{
-    float: left;
-    padding: 10%;
-    text-align: center;
+/* Container2 Styles */
+.container2{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 500px 500px;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 90px;
+    width: 90%;
+    grid-column-gap: 150px;
 }
-section#styles img{
-    width: 400px;
-    height: 300px;
-    padding: 30px;
+.container2 img{
+    grid-row: 1 / 4;
+    grid-column: 2 / 3;
+    width: 80%;
 }
-section#styles h1{
+.container2 h2{
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
     color: rgb(255, 136, 57);
     font-family: Urbanist Bold;
-    font-size: 30px;
+    font-size: 2em;
+    line-height: 1.2em;
+}
+.container2 h4{
+    grid-row: 2 / 4;
+    grid-column: 1 / 3;
+    font-size: 1.5em;
+    line-height: 1.2em;
 }
 
-section#questions{
-    float: left;
-    text-align: center;
+/* Bestseller styles */
+.bestseller{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 250px 250px 250px 250px;
+    row-gap: 10px;
+    column-gap: 70px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
-section#questions h2{
+.bestseller h1{
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
     color: rgb(255, 136, 57);
     font-family: Urbanist Bold;
     font-size: 30px;
+    text-align: center;
+}
+.best-pic img{
+    grid-row: 2 / 1;
+    grid-column: 1 / 4;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.bestseller ul{
+    grid-row: 4 / 4;
+    grid-column: 1 / 5;
+    justify-content: center;
+}
+
+/* Glass-style Styles */
+.styles{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 500px 500px;
+    row-gap: 10px;
+    column-gap: 120px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.styles h1{
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    color: rgb(255, 136, 57);
+    font-family: Urbanist Bold;
+    font-size: 30px;
+    text-align: center;
+}
+.styles h3{
+    font-family: Urbanist Bold;
+    font-size: 20px;
+    text-align: center;
+}
+.styles img{
+    width: 80%;
+    margin: 20px;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.style-pic img{
+    display: grid;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+}
+.styles ul{
+    grid-row: 4 / 4;
+    grid-column: 1 / 3;
+    justify-content: center;
+}
+
+/* Question Styles */
+.questions{
+    background-color: rgba(96, 167, 218, 0.3);
+    text-align: center;
+}
+.questions h2{
+    color: rgb(0, 0, 0);
+}
+.questions h4{
+    font-size: 20px;
 }
