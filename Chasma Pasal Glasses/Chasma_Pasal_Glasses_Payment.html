@@ -31,6 +31,13 @@
                 width: auto;
             }
 
+            header nav ul li {
+            font-size: 1.2em; 
+            line-height: 2.3em; 
+            height: 2.3em;
+            padding: 0px 10px;
+            }
+
             body > header > img{
                 display: block;
                 width: 15%;
@@ -120,8 +127,37 @@
             background: transparent;
             border: none;
             display: block;
-            margin: 5px auto;
+            margin: 5px auto;}
+
+            ul, ol {
+            list-style: none;
             }
+
+            nav ul {
+            list-style: none;
+            list-style-image: none;
+            }
+
+            nav a {
+            text-decoration: none;
+            }
+
+            article, aside, figcaption, figure,
+            footer, header, main, nav, section { 
+            display: block;
+            }
+
+            a#navicon {
+            display: none;
+            }
+
+            section form {
+            -webkit-flex: 3 1 4800px;
+            flex: 3 1 480px;
+            margin-top: 25px;
+            margin-right: 20px;
+            }
+
         </style>
     </head>
     <body>
@@ -130,7 +166,7 @@
             <h1>Checkout</h1>
             <nav> <a id="navicon" href="#"><img src="https://www.clipartmax.com/png/full/86-861651_burger-clipart.png" alt="Three Line Menu Icon@clipartmax.com"/> </a>
                 <ul>
-                   <li><a href="#Chasma_Pasal_Glasses.html">Home</a></li>
+                   <li><a href=Chasma_Pasal_Glasses.html>Home</a></li>
                    <li><a href="#">My Cart</a></li>
                    <li><a href="#">My Account</a></li>
                    <li><a href="#">Contact Us</a></li>
@@ -219,19 +255,19 @@
                 <fieldset>
                     <label class="cardLabel" for="cAmex">
                         <input name="cCard" id="cAmex" type="radio" value="amex" required>
-                        <img src="sb_amex.png" alt=""/>
+                        American Express
                     </label>
                     <label class="cardLabel" for="cDiscover">
                         <input name="cCard" id="cDiscover" type="radio" value="dicover" required>
-                        <img src="sb_discover.png" alt=""/>
+                        Discover Card
                     </label>
                     <label class="cardLabel" for="cMaster">
                         <input name="cCard" id="cMaster" type="radio" value="master" required>
-                        <img src="sb_master.png" alt=""/>
+                        Master Card
                     </label>
                     <label class="cardLabel" for="cVisa">
                         <input name="cCard" id="cVisa" type="radio" value="visa" required>
-                        <img src="https://www.freepnglogos.com/uploads/visa-card-logo-9.png" alt=""/>
+                        Visa
                     </label>
                 </fieldset>
                 <label for="cardBox">Credit Card Number</label>
