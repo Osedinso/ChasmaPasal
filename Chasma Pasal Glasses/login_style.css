@@ -23,8 +23,8 @@ html{
 
 
 body{
-    color: rgb(2, 181, 178);
-    background-color: rgb(243, 255, 243);
+    color: rgb(1, 62, 61);
+    background-color: rgb(243, 250, 255);
 }
 .container{
     height: 100vh;
@@ -43,7 +43,7 @@ body{
 }
 /* Horizontal Navigation Styles */
 nav.horizontalNav a {
-    color: rgb(2, 181, 178);
+    color: rgb(1, 62, 61);
     font-family: 'Almarai, Regular';
     font-size: 1.5em;
     line-height: 1.2em;
@@ -81,14 +81,14 @@ nav.horizontalNav a {
    }
   .form a{
     font-size: 16px;
-    color: #009579;
+    color: rgb(255, 136, 57);
     text-decoration: none;
   }
   .form a:hover{
     text-decoration: underline;
   }
   button{
-    background-color: rgb(172, 235, 172);
+    background-color: rgb(255, 136, 57);
     padding: 14px 20px;
    text-align: center;
    display: inline;
@@ -100,6 +100,6 @@ nav.horizontalNav a {
   }
 /*hover button change color*/
 button[type=submit]:hover {
-     background-color:#5ade95 ;
+     background-color: rgb(103, 175, 226) ;
     }
 
