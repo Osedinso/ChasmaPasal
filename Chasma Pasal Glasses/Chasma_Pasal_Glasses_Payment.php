@@ -1,3 +1,61 @@
+<?php
+
+include ('config.php');
+
+session_start();
+$user_id = $_SESSION['user_id'];
+
+if(!isset($user_id)){
+   header('location:login_Page.php');
+}
+
+//save and insert information into database
+if(isset($_POST['submit_btn'])){
+    $fName = mysqli_real_escape_string($conn, $_POST['fName']);
+    $lName = mysqli_real_escape_string($conn, $_POST['lName']);
+    $street = mysqli_real_escape_string($conn, $_POST['street']);
+    $street2 = mysqli_real_escape_string($conn, $_POST['street2']);
+    $city = mysqli_real_escape_string($conn, $_POST['city']);
+    $state = mysqli_real_escape_string($conn, $_POST['state']);
+    $zip = mysqli_real_escape_string($conn, $_POST['zip']);
+    $country = mysqli_real_escape_string($conn, $_POST['country']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $cCard = mysqli_real_escape_string($conn, $_POST['cCard']);
+    $cardNo =  mysqli_real_escape_string($conn, md5($_POST['cardNumber']));
+    $cardMonth = mysqli_real_escape_string($conn, $_POST['cardMonth']);
+    $cardYr = mysqli_real_escape_string($conn, $_POST['cardYear']);
+    $csc = mysqli_real_escape_string($conn, md5($_POST['csc']));
+    $placed_on = date('d-M-Y');
+
+    $query = "INSERT INTO payments (fName, lName, street, street2, city, state, zip, country, phone, cCard, cardNo, cardMonth, cardYr, csc, placed_on) 
+    VALUES ('$fName', '$lName', '$street', '$street2', '$city', '$state', '$zip', '$country', '$phone', '$cCard', '$cardNo', '$cardMonth', '$cardYr', '$csc', '$placed_on')";
+
+if(mysqli_query($conn, $query)){
+    echo "Data inserted successfully.";
+} else{
+    echo "Error: " . $query . "<br>" . mysqli_error($conn);
+}
+}
+
+// Display the entered information
+if(isset($_POST['submit_btn'])){
+    echo "<h2>Payment Information</h2>";
+    echo "<p>First Name: " . $_POST['fName'] . "</p>";
+    echo "<p>Last Name: " . $_POST['lName'] . "</p>";
+    echo "<p>Street Address: " . $_POST['street'] . "</p>";
+    if(!empty($_POST['street2'])){
+        echo "<p>Street Address (2): " . $_POST['street2'] . "</p>";
+    }
+    echo "<p>City: " . $_POST['city'] . "</p>";
+    echo "<p>State: " . $_POST['state'] . "</p>";
+    echo "<p>Zip: " . $_POST['zip'] . "</p>";
+    echo "<p>Country: " . $_POST['country'] . "</p>";
+    echo "<p>Phone: " . $_POST['phone'] . "</p>";
+    echo "<p>Credit Card Type: " . $_POST['cCard'] . "</p>";
+    echo "<p>Credit Card Number: " . $_POST['cardNumber'] . "</p>";
+    echo "<p>Expiration Date: " . $_POST['cardMonth'] . "/"
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -161,7 +219,7 @@
                     <input name="csc" id="cscBox" type="text" pattern="^\d{3}$" maxlength="3" placeholder="nnn" required>
                     
                 </fieldset>
-                <button type="submit">
+                <button name="submit_btn" type="submit">
                     <img src="submit.png" alt="submit button" width="100px">
                 </button>
             </form>
