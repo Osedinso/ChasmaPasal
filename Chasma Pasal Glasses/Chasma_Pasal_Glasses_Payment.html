@@ -15,7 +15,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Chasma Pasal Payment Form</title>
         <link href="cpg_style.css" rel="stylesheet"/>
-        <script src="cpg_script.js"></script>
     </head>
     <body>
         <header>
@@ -112,19 +111,23 @@
                     <fieldset>
                         <label class="cardLabel" for="cAmex">
                             <input name="cCard" id="cAmex" type="radio" value="amex" required>
-                            American Express
+                            <img src="cpg_amex.png" alt="American Express"/>
+                            
                         </label>
                         <label class="cardLabel" for="cDiscover">
                             <input name="cCard" id="cDiscover" type="radio" value="dicover" required>
-                            Discover Card
+                            <img src="cpg_discover.png" alt="Discover Card"/>
+                            
                         </label>
                         <label class="cardLabel" for="cMaster">
                             <input name="cCard" id="cMaster" type="radio" value="master" required>
-                            Master Card
+                            <img src="cpg_master.png" alt="Master Card"/>
+                            
                         </label>
                         <label class="cardLabel" for="cVisa">
                             <input name="cCard" id="cVisa" type="radio" value="visa" required>
-                            Visa
+                            <img src="cpg_visa.png" alt="Visa"/>
+                            
                         </label>
                     </fieldset>
                     <label for="cardBox">Credit Card Number</label>
@@ -159,11 +162,20 @@
                     
                 </fieldset>
                 <button type="submit">
-                    <img src="cpg_button.png" alt="next">
+                    <img src="submit.png" alt="submit button" width="100px">
                 </button>
             </form>
             
         </section>
+        <script>
+            // Display an alert message when the form is submitted
+            const form = document.getElementById("payment");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert("Thank you for your payment!");
+                location.reload(true);
+            });
+        </script>
 
     </body>
 </html>
