@@ -53,7 +53,7 @@ if(isset($_POST['submit_btn'])){
     echo "<p>Phone: " . $_POST['phone'] . "</p>";
     echo "<p>Credit Card Type: " . $_POST['cCard'] . "</p>";
     echo "<p>Credit Card Number: " . $_POST['cardNumber'] . "</p>";
-    echo "<p>Expiration Date: " . $_POST['cardMonth'] . "/"
+    echo "<p>Expiration Date: " . $_POST['cardMonth'] . "/";}
 ?>
 
 <!DOCTYPE html>

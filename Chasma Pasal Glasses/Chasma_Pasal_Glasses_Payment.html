@@ -176,6 +176,59 @@
                 location.reload(true);
             });
         </script>
-
+        <footer>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+                // Show the locations on Google Map
+                $(loc).ready(function(){
+                    $("#buttonOpen").click(function(){
+                        $("#GoogleMaps").show();
+                    });
+                });
+                // Hide the Google Map
+                $(loc).ready(function(){
+                    $("#buttonClose").click(function(){
+                        $("#GoogleMaps").hide();
+                    });
+                });
+            </script>
+            <nav class="verticalNav">
+                <h1>Socials</h1>
+                <ul>
+                   <li><a href="Chasma_Pasal_Glasses.html">Chasma Pasal</a></li>
+                   <li><a href="#"><img id="fbicon" src="fbicon.png" alt="">    Facebook</a></li>
+                   <li><a href="#"><img id="twittericon" src="twittericon.png" alt="">  Twitter</a></li>
+                   <li><a href="#"><img id="linkedIn" src="lkdnicon.png" alt="">    LinkedIn</a></li>
+                   <li><a href="#"><img id="igicon" src="igicon.png" alt="">    Instagram</a></li>
+                </ul>
+            </nav>
+            <nav class="verticalNav">
+                <h1>Products</h1>
+                <ul>
+                   <li><a href="#">Glasses</a></li>
+                   <li><a href="#">Contacts</a></li>
+                   <li><a href="#">Collections</a></li>
+                   <li><a href="#">Accessories</a></li>
+                   <li><a href="#">Specials</a></li>
+                </ul>
+            </nav>
+            <nav class="verticalNav">
+                <h1>Get a Prescription</h1>
+                <ul>
+                   <li><a href="#">Book an eye exam</a></li>
+                   <li><a href="#">Prescription History</a></li>
+                   <li><a href="#">Renew a prescription</a></li>
+                   <li><a href="#">Measure your PD</a></li>
+                   <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <nav class="contactInfo">
+                <h1>Visit our stores</h1>
+                <ul>
+                    <li><a href="https://www.google.com/maps/search/Warby+Parker/@33.8383369,-99.6119862,5z/data=!3m1!4b1">Find a location</a></li>
+                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7064739.42762203!2d-99.94614427499998!3d30.163427499999983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8647376a2a60cd81%3A0xdaeae72006cc4506!2sWarby%20Parker%20The%20Woodlands!5e0!3m2!1sen!2sus!4v1682979212087!5m2!1sen!2sus" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p class="credits">&copy; Reference: copyright @ <?php echo date('Y');?> by <span>Fusion</span></p>
+            </nav>
+        </footer>
     </body>
 </html>
