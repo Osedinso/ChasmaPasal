@@ -54,11 +54,20 @@ if(isset($_POST['submit'])){
                     ';
                 }
                 }
-                ?>
+        ?>
         <span>Don't have an account?
-            <a href="Signup_Page.php" >Signup</a>
+            <a href="SignUp_Page.php">Signup</a>
         </span>
     </div>
 </section>
+<script>
+    // Display an alert message when the form is submitted
+    const form = document.getElementById("payment");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Login successful!");
+        location.reload(true);
+    });
+</script>
     </body>
 </html>

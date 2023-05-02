@@ -28,44 +28,8 @@ if(isset($_POST['submit_btn'])){
     $csc = mysqli_real_escape_string($conn, md5($_POST['csc']));
     $placed_on = date('d-M-Y');
 
-    $query = "INSERT INTO `payments` (user_id,fName, lName, street, street2, city, state, zip, country, phone, cCard, cardNo, cardMonth, cardYr, csc, placed_on) 
-    VALUES ('$user_id','$fName', '$lName', '$street', '$street2', '$city', '$state', '$zip', '$country', '$phone', '$cCard', '$cardNo', '$cardMonth', '$cardYr', '$csc', '$placed_on')";
-
-if(count($errors) == 0){
-    mysqli_query($conn, $query);
-
-    echo "<h2>Payment Information</h2>";
-
-    echo "<p>First Name: " . $_POST['fName'] . "</p>";
-
-    echo "<p>Last Name: " . $_POST['lName'] . "</p>";
-
-    echo "<p>Street Address: " . $_POST['street'] . "</p>";
-
-    if(!empty($_POST['street2'])){
-
-        echo "<p>Street Address (2): " . $_POST['street2'] . "</p>";
-
-    }
-
-    echo "<p>City: " . $_POST['city'] . "</p>";
-
-    echo "<p>State: " . $_POST['state'] . "</p>";
-
-    echo "<p>Zip: " . $_POST['zip'] . "</p>";
-
-    echo "<p>Country: " . $_POST['country'] . "</p>";
-
-    echo "<p>Phone: " . $_POST['phone'] . "</p>";
-
-    echo "<p>Credit Card Type: " . $_POST['cCard'] . "</p>";
-
-    echo "<p>Credit Card Number: " . $_POST['cardNumber'] . "</p>";
-
-    //header('location: Chasma_Pasal_Glasses.html');
-} else{
-    echo "Error: " . $query . "<br>" . mysqli_error($conn);
-}
+    $query = "INSERT INTO `payment` (user_id, fName, lName, street, street2, city, state, zip, country, phone, cCard, cardNo, cardMonth, cardYr, csc, placed_on) 
+    VALUES ('$user_id', '$fName', '$lName', '$street', '$street2', '$city', '$state', '$zip', '$country', '$phone', '$cCard', '$cardNo', '$cardMonth', '$cardYr', '$csc', '$placed_on')";
 }
 
 // Display the entered information
@@ -247,16 +211,47 @@ if(count($errors) == 0){
                     <img src="submit.png" alt="submit button" width="100px">
                 </button>
             </form>
-            
         </section>
-    <script>
-    // Display an alert message when the form is submitted
-    const form = document.getElementById("payment");
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
-        alert("Thank you for your payment!");
-        location.reload(true);
-    });
-</script>
+
+        <?php
+        if(count($errors) == 0){
+        mysqli_query($conn, $query);
+
+        // Display an alert message when the form is submitted
+        echo "<script> alert('Thank you for your payment!')</script>";
+
+        echo "<h2>Payment Information</h2>";
+
+        echo "<p>First Name: " . $_POST['fName'] . "</p>";
+
+        echo "<p>Last Name: " . $_POST['lName'] . "</p>";
+
+        echo "<p>Street Address: " . $_POST['street'] . "</p>";
+
+        if(!empty($_POST['street2'])){
+
+            echo "<p>Street Address (2): " . $_POST['street2'] . "</p>";
+
+        }
+
+        echo "<p>City: " . $_POST['city'] . "</p>";
+
+        echo "<p>State: " . $_POST['state'] . "</p>";
+
+        echo "<p>Zip: " . $_POST['zip'] . "</p>";
+
+        echo "<p>Country: " . $_POST['country'] . "</p>";
+
+        echo "<p>Phone: " . $_POST['phone'] . "</p>";
+
+        echo "<p>Credit Card Type: " . $_POST['cCard'] . "</p>";
+
+        echo "<p>Credit Card Number: " . $_POST['cardNumber'] . "</p>";
+
+        //header('location: Chasma_Pasal_Glasses.html');
+    } else{
+        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+    }
+        ?>
     </body>
 </html>
