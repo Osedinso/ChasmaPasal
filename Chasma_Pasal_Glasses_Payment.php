@@ -3,10 +3,11 @@
 include ('config.php');
 
 session_start();
+$errors = array(); 
 $user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){
-   header('location:login_Page.php');
+  header('location:login_Page.php');
 }
 
 //save and insert information into database
@@ -27,34 +28,57 @@ if(isset($_POST['submit_btn'])){
     $csc = mysqli_real_escape_string($conn, md5($_POST['csc']));
     $placed_on = date('d-M-Y');
 
-    $query = "INSERT INTO payments (fName, lName, street, street2, city, state, zip, country, phone, cCard, cardNo, cardMonth, cardYr, csc, placed_on) 
-    VALUES ('$fName', '$lName', '$street', '$street2', '$city', '$state', '$zip', '$country', '$phone', '$cCard', '$cardNo', '$cardMonth', '$cardYr', '$csc', '$placed_on')";
+    $query = "INSERT INTO `payments` (user_id,fName, lName, street, street2, city, state, zip, country, phone, cCard, cardNo, cardMonth, cardYr, csc, placed_on) 
+    VALUES ('$user_id','$fName', '$lName', '$street', '$street2', '$city', '$state', '$zip', '$country', '$phone', '$cCard', '$cardNo', '$cardMonth', '$cardYr', '$csc', '$placed_on')";
 
-if(mysqli_query($conn, $query)){
-    echo "Data inserted successfully.";
+if(count($errors) == 0){
+    mysqli_query($conn, $query);
+
+    echo "<h2>Payment Information</h2>";
+
+    echo "<p>First Name: " . $_POST['fName'] . "</p>";
+
+    echo "<p>Last Name: " . $_POST['lName'] . "</p>";
+
+    echo "<p>Street Address: " . $_POST['street'] . "</p>";
+
+    if(!empty($_POST['street2'])){
+
+        echo "<p>Street Address (2): " . $_POST['street2'] . "</p>";
+
+    }
+
+    echo "<p>City: " . $_POST['city'] . "</p>";
+
+    echo "<p>State: " . $_POST['state'] . "</p>";
+
+    echo "<p>Zip: " . $_POST['zip'] . "</p>";
+
+    echo "<p>Country: " . $_POST['country'] . "</p>";
+
+    echo "<p>Phone: " . $_POST['phone'] . "</p>";
+
+    echo "<p>Credit Card Type: " . $_POST['cCard'] . "</p>";
+
+    echo "<p>Credit Card Number: " . $_POST['cardNumber'] . "</p>";
+
+    //header('location: Chasma_Pasal_Glasses.html');
 } else{
     echo "Error: " . $query . "<br>" . mysqli_error($conn);
 }
 }
 
 // Display the entered information
-if(isset($_POST['submit_btn'])){
-    echo "<h2>Payment Information</h2>";
-    echo "<p>First Name: " . $_POST['fName'] . "</p>";
-    echo "<p>Last Name: " . $_POST['lName'] . "</p>";
-    echo "<p>Street Address: " . $_POST['street'] . "</p>";
-    if(!empty($_POST['street2'])){
-        echo "<p>Street Address (2): " . $_POST['street2'] . "</p>";
-    }
-    echo "<p>City: " . $_POST['city'] . "</p>";
-    echo "<p>State: " . $_POST['state'] . "</p>";
-    echo "<p>Zip: " . $_POST['zip'] . "</p>";
-    echo "<p>Country: " . $_POST['country'] . "</p>";
-    echo "<p>Phone: " . $_POST['phone'] . "</p>";
-    echo "<p>Credit Card Type: " . $_POST['cCard'] . "</p>";
-    echo "<p>Credit Card Number: " . $_POST['cardNumber'] . "</p>";
-    echo "<p>Expiration Date: " . $_POST['cardMonth'] . "/";}
+
+//if(isset($_POST['submit_btn'])){
+
+    
+
 ?>
+
+
+
+
 
 <!DOCTYPE html>
 
@@ -90,7 +114,7 @@ if(isset($_POST['submit_btn'])){
 
         <section>
             <h1>Payment Form</h1>
-            <form id="payment" action="http://www.example.com/cpg/payment" method="post">
+            <form id="payment" action="" method="post">
                 <fieldset id="billing">
                     <legend>Billing Information (required)</legend>
                     <label for="firstBox">First Name*</label>
@@ -225,15 +249,14 @@ if(isset($_POST['submit_btn'])){
             </form>
             
         </section>
-        <script>
-            // Display an alert message when the form is submitted
-            const form = document.getElementById("payment");
-            form.addEventListener("submit", function(event) {
-                event.preventDefault();
-                alert("Thank you for your payment!");
-                location.reload(true);
-            });
-        </script>
-
+    <script>
+    // Display an alert message when the form is submitted
+    const form = document.getElementById("payment");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Thank you for your payment!");
+        location.reload(true);
+    });
+</script>
     </body>
 </html>
